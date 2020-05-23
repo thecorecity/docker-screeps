@@ -26,8 +26,8 @@ services:
     networks:
       - screeps
     volumes:
-      - mongo-data:/data/db
-      - mongo-config:/data/configdb
+      - /srv/containers/databases/screeps/data:/data/db
+      - /srv/containers/databases/screeps/config:/data/configdb
     restart: "no"
   redis:
     container_name: redis
@@ -35,13 +35,8 @@ services:
     networks:
       - screeps
     volumes:
-      - redis-data:/data
+      - /srv/containers/data/screeps-redis:/data
     restart: "no"
-
-volumes:
-  mongo-data: /srv/containers/databases/screeps/data
-  mongo-config: /srv/containers/databases/screeps/config
-  redis-data: /srv/containers/data/screeps-redis
 
 networks:
   screeps:
