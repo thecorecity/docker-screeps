@@ -7,7 +7,7 @@ services:
     networks:
       - screeps
     volumes:
-      - /opt/screeps:/screeps
+      - /srv/data/screeps:/screeps
     ports:
       - 21025:21025
       - 21026:21026
@@ -39,9 +39,9 @@ services:
     restart: "no"
 
 volumes:
-  mongo-data:
-  mongo-config:
-  redis-data:
+  mongo-data: /srv/containers/databases/screeps/data
+  mongo-config: /srv/containers/databases/screeps/config
+  redis-data: /srv/containers/data/screeps-redis
 
 networks:
   screeps:
