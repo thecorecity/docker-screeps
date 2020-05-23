@@ -7,7 +7,7 @@ services:
     networks:
       - screeps
     volumes:
-      - /srv/data/screeps:/screeps
+      - /srv/containers/data/screeps:/screeps
     ports:
       - 21025:21025
       - 21026:21026
